@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>RESIZE | FRONTEND GUIDE</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css" media="screen" title="no title">
+    <link rel="stylesheet" href="style.css" media="screen" title="no title">
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+
+  <div class="clearfix"><h1>Focal Point</h1></div>  
+
+  <!-- Image Focal Point -->
+  <section class="image-focal-point">
+    <div>
+      <img src="/img/pexels-photo-117422.jpeg" alt="">
+    </div>
+    <div>
+      <img src="/img/night-star-moon-big-bar.jpg" alt="">
+    </div>
+  </section>
+
+  <div class="clearfix"><h1>Image Crop</h1></div>
+
+  <!-- Image Crop -->
+  <section class="image-crop">
+ 
+    <div class="image-item-crop pull-left">
+      <img src="/img/pexels-photo-117422.jpeg" alt="">
+    </div>
+    <div class="image-item-crop pull-left">
+      <img src="/img/pexels-photo-131811.jpeg" alt="">
+    </div>
+     <div class="image-item-crop pull-left">
+      <img src="/img/night-star-moon-big-bar.jpg" class="portrait" alt="">
+    </div>
+  </section>
+
+  <div class="clearfix">&nbsp;</div>
+  <div class="clearfix"><h1>Image Background Resizable</h1></div>
+
+  
+  <!-- Image Background Resizable -->
+  <section class="image-background-resizable">
+      <div>&nbsp;</div>
+  </section>
+
+  <script type='text/javascript'>
+    $(function () {
+        var $item = $('.image-background-resizable'); 
+        var $wHeight = $(window).height();
+        $item.height($wHeight); 
+
+        $(window).on('resize', function (){
+          $wHeight = $(window).height();
+          $item.height($wHeight);
+        });
+    });
+  </script>
+
+  </body>
+</html>

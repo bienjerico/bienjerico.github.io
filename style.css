@@ -1,0 +1,192 @@
+
+* {
+   margin: 0;
+   padding: 0;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+
+body {
+	background-color: #fff;
+}
+
+/*section {
+    width: 100%;
+    display: inline-block;
+    margin: 0 auto;
+}*/
+
+.clearfix {
+	clear: both;
+}
+
+.pull-left {
+	float:left;
+}
+.pull-right {
+	float:right;
+}
+.text-center {
+	text-align: center;
+}
+
+
+
+/*-------------------*/
+/* URL List */
+/*-------------------*/
+.url-list {
+	margin: 0;
+	padding-left: 30%;
+	padding-right: 30%;
+	text-align: center;
+}
+.url-list h1,h2 {
+	font-family: "Courier New", Courier, monospace;
+}
+.url-list ul {
+	list-style: none;
+	padding: 0;
+}
+
+.url-list li {
+	border-bottom:1px solid #565656;
+	color:#565;
+}    
+
+.url-list li a {
+	text-decoration: none;
+	color:#565;
+}
+
+.url-list li a:hover {
+	color:#232;
+}
+
+
+/*-------------------*/
+/* Image Focal Point */
+/*-------------------*/
+.image-focal-point {
+	overflow: hidden;
+	height: auto;
+	width: 100%;
+}
+
+.image-focal-point img {
+	max-width: 100%;
+	height: auto;
+	width: 100%;
+}
+
+.image-focal-point div {
+	position: relative; 
+	max-width: none; 
+	height: auto;
+}
+
+/* Image Crop */
+.image-item-crop {
+	/*margin: 0 auto;*/
+	position: relative;
+	overflow: hidden;
+	height: 250px;
+	width: 250px;
+}
+
+@media screen and (min-width: 768px) {
+	.image-item-crop {
+		height: 350px;
+		width: 350px;
+	}
+}
+
+@media screen and (min-width: 1024px) {
+	.image-item-crop {
+		height: 450px;
+		width: 450px;
+	}
+}
+
+.image-item-crop img {
+	background-size: cover;
+	position: absolute;
+	height: 100%;
+	width: auto;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%,-50%);
+	    -ms-transform: translate(-50%,-50%);
+	        transform: translate(-50%,-50%);
+}
+
+.image-item-crop img.portrait {
+	height: auto;
+	width: 100%;
+}
+
+
+/*----------------------------*/
+/* Image Background Resizable */
+/*----------------------------*/
+.image-background-resizable {
+	background: url('/img/pexels-photo-68438.jpeg') no-repeat center center;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+/*------------*/
+/* Hover Zoom */
+/*------------*/
+.hover-zoom{
+	display: inline-block;
+}
+
+.hover-resize {
+	-webkit-transition: all 0.3s;
+	-moz-transition: all 0.32s;
+	transition: all 0.3s;
+}
+.hover-resize:hover {
+	-webkit-transform: scale(1.1);
+	-moz-transform: scale(1.1);
+	transform: scale(1.1);
+}
+.hover-border {
+	overflow: hidden;
+	float:left;
+}
+
+ /*------------------*/
+/*Hover Overlap Text*/
+/*------------------*/
+.hover-overlap-text {
+	position: relative;
+	display: inline-block;
+}
+
+.hover-overlap-text .text-content {
+	position: absolute;
+	top:50%;
+	margin:0;
+	left: 50%;
+	margin-right: -50%;
+	transform: translate(-50%, -50%);
+	opacity:0;
+	-webkit-transition: opacity .25s ease;
+} 
+.hover-overlap-text:hover .text-content {
+  	opacity:1;
+} 
+
+.hover-overlap-text img {
+	-webkit-transition: opacity .25s ease;
+}
+
+.hover-overlap-text img:hover {
+	opacity: 0.5;
+}
