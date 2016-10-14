@@ -79,7 +79,13 @@ body {
 	background: #ffb347;
 }
 .gradient-list .gradient-group:first-child li.gradient-item:nth-child(8){
+	background: #FFC547;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(9){
 	background: #FFCE47;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(10){
+	background: #e52d27;
 }
 /* Personal Reference */
 .gradient-list .gradient-group:last-child li.gradient-item:nth-child(1){

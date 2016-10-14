@@ -12,20 +12,12 @@ var FRONTEND = FRONTEND || {};
 	FRONTEND.moduleLoader = {
 		init: function(){
 
-		 // 	if (!$(".toggle-show-more-list").length) {return;}
-			// // dom caching
-			// this.masterProduct 	= $('.toggle-show-more-list');
-			// this.productList 		= $('.toggle-show-more-lists', this.masterProduct);
-			// this.initProductList(this.productList);
+			this.toggleShowMore = $('.toggle-show-more');
+			this.initToggleShowMore(this.toggleShowMore);
 
 			this.wowjs();			
 		},
-
-		// initProductList: function(){
-		// 	console.log('success');
-
-		// },
-
+		
 		wowjs: function() {
 			var wow = new WOW(
 			  {
@@ -42,6 +34,25 @@ var FRONTEND = FRONTEND || {};
 			  }
 			);
 			wow.init();
+		},
+
+		initToggleShowMore: function(elem) {
+			$(".toggle-show-more-list",elem).each(function(){
+            var productlist = $(this).find('.toggle-show-more-item:gt(2)');
+
+            productlist.hide();
+
+            $(this).find('.btnToggleShowMore').click(function(){
+              var btnToggleShowMore = $(this);
+              productlist.slideToggle(function(){
+                if(productlist.is(':visible')){
+                  btnToggleShowMore.text('Less..');
+                }else{
+                  btnToggleShowMore.text('More..');
+                }
+              });
+            })
+          });
 		}
 
 	};
