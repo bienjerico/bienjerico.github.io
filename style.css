@@ -33,7 +33,7 @@ body {
 .gradient-list {
 	font-family: 'Open Sans Condensed', sans-serif;
 	letter-spacing: 0.25em;
-	width: 60%;
+	width: 70%;
 	margin: 0 auto;
 }
 	.gradient-list ul {
@@ -44,12 +44,12 @@ body {
 	margin: 0;
 	padding: 20px;}
 .gradient-list li.gradient-item {
-	padding: 20px;
+	padding: 20px 30px;
 	-webkit-transition-duration: 0.3s;
 	transition-duration: 0.3s;
 }
 .gradient-list li.gradient-item:hover {
-	padding-left: 30px;
+	padding-left: 40px;
 }
 
 .gradient-list .gradient-item a {
