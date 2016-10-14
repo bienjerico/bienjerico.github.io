@@ -78,6 +78,9 @@ body {
 .gradient-list .gradient-group:first-child li.gradient-item:nth-child(7){
 	background: #ffb347;
 }
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(8){
+	background: #FFCE47;
+}
 /* Personal Reference */
 .gradient-list .gradient-group:last-child li.gradient-item:nth-child(1){
 	background: #0072ff;
