@@ -1,7 +1,7 @@
 
 * {
    margin: 0;
-   padding: 0;
+   /*padding: 0;*/
 	-moz-box-sizing: border-box;
 	-webkit-box-sizing: border-box;
 	box-sizing: border-box;
@@ -11,12 +11,6 @@
 body {
 	background-color: #fff;
 }
-
-/*section {
-    width: 100%;
-    display: inline-block;
-    margin: 0 auto;
-}*/
 
 .clearfix {
 	clear: both;
@@ -33,38 +27,67 @@ body {
 }
 
 
-
-/*-------------------*/
-/* URL List */
-/*-------------------*/
-.url-list {
-	margin: 0;
-	padding-left: 30%;
-	padding-right: 30%;
-	text-align: center;
+/*---------------*/
+/* Gradient List */
+/*---------------*/
+.gradient-list {
+	font-family: 'Open Sans Condensed', sans-serif;
+	letter-spacing: 0.25em;
+	width: 60%;
+	margin: 0 auto;
 }
-.url-list h1,h2 {
-	font-family: "Courier New", Courier, monospace;
-}
-.url-list ul {
+	.gradient-list ul {
 	list-style: none;
 	padding: 0;
 }
+.gradient-list h1.gradient-header {
+	margin: 0;
+	padding: 20px;}
+.gradient-list li.gradient-item {
+	padding: 20px;
+	-webkit-transition-duration: 0.3s;
+	transition-duration: 0.3s;
+}
+.gradient-list li.gradient-item:hover {
+	padding-left: 30px;
+}
 
-.url-list li {
-	border-bottom:1px solid #565656;
-	color:#565;
-}    
-
-.url-list li a {
+.gradient-list .gradient-item a {
 	text-decoration: none;
-	color:#565;
+	color:#ffffff;
 }
-
-.url-list li a:hover {
-	color:#232;
+/* Web Reference */
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(1){
+	background: #ff512f;
 }
-
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(2){
+	background: #FF742F;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(3){
+	background: #FF822F;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(4){
+	background: #56AB2F;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(5){
+	background: #6a3093;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(6){
+	background: #773093;
+}
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(7){
+	background: #ffb347;
+}
+/* Personal Reference */
+.gradient-list .gradient-group:last-child li.gradient-item:nth-child(1){
+	background: #0072ff;
+}
+.gradient-list .gradient-group:last-child li.gradient-item:nth-child(2){
+	background: #008CFF;
+}
+.gradient-list .gradient-group:last-child li.gradient-item:nth-child(3){
+	background: #00B3FF;
+}
 
 /*-------------------*/
 /* Image Focal Point */
@@ -190,3 +213,4 @@ body {
 .hover-overlap-text img:hover {
 	opacity: 0.5;
 }
+
