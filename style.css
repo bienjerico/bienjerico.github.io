@@ -90,6 +90,9 @@ body {
 .gradient-list .gradient-group:first-child li.gradient-item:nth-child(11){
 	background: #283E51;
 }
+.gradient-list .gradient-group:first-child li.gradient-item:nth-child(12){
+	background: #2987A3;
+}
 /* Personal Reference */
 .gradient-list .gradient-group:last-child li.gradient-item:nth-child(1){
 	background: #0072ff;
