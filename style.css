@@ -262,4 +262,5 @@ body {
 .accordion-list .accordion-details a {
   text-decoration: none;
   color: #0072ff;
+  font-weight: bold;
 }
