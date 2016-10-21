@@ -239,6 +239,7 @@ body {
 	margin:0 auto;
   width: 70%;
 }
+
 .accordion-list h1 {
 	padding-left: 20px;
 }
@@ -253,7 +254,7 @@ body {
 }
 .accordion-list .accordion-group h2{
   color: #0072FF;
-  padding: 15px;
+  padding: 20px;
 }
 .accordion-list .accordion-details {
   padding-bottom: 25px;
@@ -265,4 +266,18 @@ body {
   text-decoration: none;
   font-weight: bold;
   color: #0072ff;
+}
+
+/*-------------*/
+/* information */
+/*-------------*/
+.information {
+  text-align: center;
+  letter-spacing: 0.25em;
+	margin:0 auto;
+  width: 70%;
+}
+.information-socialnetwork a {
+  text-decoration: none;
+  color: #000;
 }
