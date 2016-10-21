@@ -15,9 +15,12 @@ var FRONTEND = FRONTEND || {};
 			this.toggleShowMore = $('.toggle-show-more');
 			this.initToggleShowMore(this.toggleShowMore);
 
-			this.wowjs();			
+			this.accordionList = $('.accordion-list');
+			this.initAccordionList(this.accordionList);
+
+			this.wowjs();
 		},
-		
+
 		wowjs: function() {
 			var wow = new WOW(
 			  {
@@ -53,7 +56,15 @@ var FRONTEND = FRONTEND || {};
               });
             })
           });
+		},
+		initAccordionList: function(elem){
+			elem.each(function(){
+				$(this).find('.accordion-header').on('click',function(){
+					$(this).next('ul').slideToggle();
+				})
+			});
 		}
+
 
 	};
 
