@@ -213,7 +213,6 @@ body {
 	position: relative;
 	display: inline-block;
 }
-
 .hover-overlap-text .text-content {
 	position: absolute;
 	top:50%;
@@ -242,7 +241,7 @@ body {
 .accordion-list {
 	letter-spacing: 0.25em;
 	margin:0 auto;
-	width: 70%;
+	width: 90%;
 }
 @media screen and (min-width: 768px) {
 	.accordion-list {
@@ -284,11 +283,11 @@ body {
   	text-align: center;
 	letter-spacing: 0.25em;
 	margin:0 auto;
-	width: 70%;
+	width: 90%;
 }
 @media screen and (min-width: 768px) {
 	.information {
-		width: 90%;
+		width: 70%;
 	}	
 }
 .information-socialnetwork a {
