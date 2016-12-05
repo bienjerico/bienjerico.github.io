@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Mobile</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta charset="utf-8">
+<meta name="author" content="Arni">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<style>
+
+</style>
+<script type="text/javascript">
+
+  if(navigator.onLine)
+  {
+    alert('You are Online');
+  }
+  else
+  {
+    alert('You are Offline')
+  }
+
+
+// We get the initial value when the promise resolves ...
+navigator.getBattery().then(function(battery) {
+  alert(battery.level);
+  // ... and any subsequent updates.
+  battery.onlevelchange = function() {
+    console.log(this.level);
+  };
+});
+
+</script>
+</head>
+<body>
+
+</body>
+</html>
