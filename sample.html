@@ -22,14 +22,12 @@
   }
 
 
-// We get the initial value when the promise resolves ...
 navigator.getBattery().then(function(battery) {
-  alert(battery.level);
-  // ... and any subsequent updates.
-  battery.onlevelchange = function() {
-    console.log(this.level);
-  };
-});
+
+    var level = battery.level;
+    alert(level);
+    console.log(level);
+})
 
 </script>
 </head>
