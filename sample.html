@@ -21,18 +21,36 @@
     alert('You are Offline')
   }
 
+    window.onload = function () {
+      function updateBatteryStatus(battery) {
+        document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
+        document.querySelector('#level').textContent = battery.level;
+        document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60;
+      }
 
-navigator.getBattery().then(function(battery) {
-alert("battery");
-    var level = battery.level;
-    alert(level);
-    document.getElementById("batterylevel").innerHTML = level;
-    console.log(level);
-})
+      navigator.getBattery().then(function(battery) {
+        // Update the battery status initially when the promise resolves ...
+        updateBatteryStatus(battery);
 
-</script>
+        // .. and for any subsequent updates.
+        battery.onchargingchange = function () {
+          updateBatteryStatus(battery);
+        };
+
+        battery.onlevelchange = function () {
+          updateBatteryStatus(battery);
+        };
+
+        battery.ondischargingtimechange = function () {
+          updateBatteryStatus(battery);
+        };
+      });
+    };
+  </script>
 </head>
 <body>
-<div id="batterylevel"></div>
+  <div id="charging">(charging state unknown)</div>
+  <div id="level">(battery level unknown)</div>
+  <div id="dischargingTime">(discharging time unknown)</div>
 </body>
 </html>
