@@ -8,49 +8,133 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <style>
+  * {
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    text-align: center;
+  }
+  .clearfix {
+    clear:both;
+  }
 
 </style>
-<script type="text/javascript">
 
-  if(navigator.onLine)
-  {
-    alert('You are Online');
-  }
-  else
-  {
-    alert('You are Offline')
-  }
-
-    window.onload = function () {
-      function updateBatteryStatus(battery) {
-        document.querySelector('#charging').textContent = battery.charging ? 'charging' : 'not charging';
-        document.querySelector('#level').textContent = battery.level;
-        document.querySelector('#dischargingTime').textContent = battery.dischargingTime / 60;
-      }
-
-      navigator.getBattery().then(function(battery) {
-        // Update the battery status initially when the promise resolves ...
-        updateBatteryStatus(battery);
-
-        // .. and for any subsequent updates.
-        battery.onchargingchange = function () {
-          updateBatteryStatus(battery);
-        };
-
-        battery.onlevelchange = function () {
-          updateBatteryStatus(battery);
-        };
-
-        battery.ondischargingtimechange = function () {
-          updateBatteryStatus(battery);
-        };
-      });
-    };
-  </script>
 </head>
 <body>
-  <div id="charging">(charging state unknown)</div>
-  <div id="level">(battery level unknown)</div>
-  <div id="dischargingTime">(discharging time unknown)</div>
+<div class="content">
+  <section>
+    <h2 class="upper-label" name="headerLabel"  id="headerLabel">Your Name</h2>
+    <div class="function-button">
+        <button id="buttonGeo">Click to Show Geolocation</button>
+        <div class="clearfix">&nbsp;</div>
+        <button id="buttonBat">Click to Show Battery Status</button>
+        <div class="clearfix">&nbsp;</div>
+        <button id="buttonNet">Click to Show Network Status</button>
+        <div class="clearfix">&nbsp;</div>
+    </div>
+    <input type="text" name="inputName" id="inputName" placeholder="Enter your name">
+    <div class="clearfix">&nbsp;</div>
+    <button type="button" name="buttonSubmit" id="buttonSubmit">Click Here</button>
+  </section>
+  
+</div>
+
+
+<script type="text/javascript">
+
+/* Name */
+function buttonSubmit(){
+  
+  var today = new Date()
+  var days = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+  var curHr = today.getHours()
+  var headerLabel = document.getElementById('headerLabel');
+  var inputName = document.getElementById('inputName');
+  headerLabel.innerHTML = inputName.value;
+
+    if (curHr < 12) {
+      alert('Good Morning, '+inputName.value+'! Have a nice '+days[today.getDay()]+'.');
+    } else if (curHr < 18) {
+      alert('Good Afternoon, '+inputName.value+'! Have a nice '+days[today.getDay()]+'.');
+    } else {
+      alert('Good Evening, '+inputName.value+'! Have a nice '+days[today.getDay()]+'.');
+    }
+
+}
+
+/* Geolocation */
+function getPosition() {
+
+   var options = {
+      enableHighAccuracy: true,
+      maximumAge: 3600000
+   }
+  
+   var watchID = navigator.geolocation.getCurrentPosition(onSuccess, onError, options);
+
+   function onSuccess(position) {
+
+      alert('Latitude: '          + position.coords.latitude          + '\n' +
+         'Longitude: '         + position.coords.longitude         + '\n' +
+         'Altitude: '          + position.coords.altitude          + '\n' +
+         'Accuracy: '          + position.coords.accuracy          + '\n' +
+         'Altitude Accuracy: ' + position.coords.altitudeAccuracy  + '\n' +
+         'Heading: '           + position.coords.heading           + '\n' +
+         'Speed: '             + position.coords.speed             + '\n' +
+         'Timestamp: '         + position.timestamp                + '\n');
+   };
+
+   function onError(error) {
+      alert('code: '    + error.code    + '\n' + 'message: ' + error.message + '\n');
+   }
+}
+
+/* Network Status */
+function networkInfo() {
+   var networkState = navigator.connection.type;
+   var states = {};
+  
+   states[Connection.UNKNOWN]  = 'Unknown connection';
+   states[Connection.ETHERNET] = 'Ethernet connection';
+   states[Connection.WIFI]     = 'WiFi connection';
+   states[Connection.CELL_2G]  = 'Cell 2G connection';
+   states[Connection.CELL_3G]  = 'Cell 3G connection';
+   states[Connection.CELL_4G]  = 'Cell 4G connection';
+   states[Connection.CELL]     = 'Cell generic connection';
+   states[Connection.NONE]     = 'No network connection';
+
+   alert('Connection type: ' + states[networkState]);
+}
+
+function onOffline() {
+   alert('You are now offline!');
+}
+
+function onOnline() {
+   alert('You are now online!');
+}
+
+/* Battery Status */
+function onBatteryStatus(status) {
+    alert("Level: " + status.level + " isPlugged: " + status.isPlugged);
+}
+
+
+
+document.getElementById("buttonSubmit").addEventListener("click", buttonSubmit);
+
+document.getElementById("buttonGeo").addEventListener("click", getPosition);
+
+document.getElementById("buttonNet").addEventListener("click", networkInfo);
+document.addEventListener("offline", onOffline, false);
+document.addEventListener("online", onOnline, false);
+
+document.getElementById("buttonBat").addEventListener("click", onBatteryStatus, false);
+
+
+</script>
+
 </body>
 </html>
